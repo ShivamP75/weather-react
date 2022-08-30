@@ -3,6 +3,8 @@ import axios from "axios";
 import WeatherBox from "./WeatherBox";
 import './WeatherBox.css'
 import TopCity from "./TopCity";
+
+
 export default function GetLocation() {
   const APIKey = "e0c75f6e0674d3356860883d1ed7f009";
 
@@ -51,6 +53,7 @@ export default function GetLocation() {
   function searchHandler(){
     if(location.length > 0 ){setCity(location);
     setSearchOrLoc(true)
+    setLoading(false);
     }
   }
   return (
@@ -74,8 +77,7 @@ export default function GetLocation() {
               </path>
             </svg></button>
         </div>
-        
-        {searchOrLoca ? <TopCity cityName={city}/> : <WeatherBox data = {data} isLoading = {isLoading}/>}
+        { isLoading ? <WeatherBox data = {data} isLoading = {isLoading} /> : searchOrLoca ? <TopCity cityName={city}/> : <WeatherBox data = {data} isLoading = {isLoading}/>}
       </div>
     </>
   );
