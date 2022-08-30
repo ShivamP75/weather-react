@@ -33,6 +33,7 @@ function TopCity(props) {
         console.log(err);
       });
   }, [props.cityName]);
+  let iconSrc = `https://openweathermap.org/img/wn/${data1.cityIcon}.png`
   return (
     <div className="card">
       { isLoading ? <Loader /> : 
@@ -41,11 +42,11 @@ function TopCity(props) {
           <h1 className="temp">{(data1.cityTemp - 273.15).toFixed(2)}°C</h1>
           <div className="flex">
             <img
-              src="https://openweathermap.org/img/wn/04n.png"
+              src= {iconSrc}
               alt=""
               className="icon"
             />
-            <div className="description">Cloudy</div>
+            <div className="description">{data1.cityDescription}</div>
           </div>
           <div className="humidity">Humidity: {data1.cityHumidity}</div>
           <div className="wind">Wind speed: {data1.citySpeed} km/h</div>

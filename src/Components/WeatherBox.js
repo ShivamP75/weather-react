@@ -3,6 +3,8 @@ import './WeatherBox.css'
 import LoadingSpinner from './LoadingSpinner'
 
 export default function WeatherBox({data, isLoading}) {
+  let iconSrc = `https://openweathermap.org/img/wn/${data.cityIcon}.png`
+  
   return (
     <div className="card">
         {isLoading ? <LoadingSpinner /> :
@@ -10,8 +12,8 @@ export default function WeatherBox({data, isLoading}) {
           <h2 className="city">{data.cityName}</h2>
           <h1 className="temp">{(data.cityTemp - 273.15).toFixed(2)}°C</h1>
           <div className="flex">
-            <img src="https://openweathermap.org/img/wn/04n.png" alt="" className="icon" />
-            <div className="description">Cloudy</div>
+            <img src={iconSrc} alt="" className="icon" />
+            <div className="description">{data.cityDescription}</div>
           </div>
           <div className="humidity">Humidity: {data.cityHumidity}</div>
           <div className="wind">Wind speed: {data.citySpeed} km/h</div>
