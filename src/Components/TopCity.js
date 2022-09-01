@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo } from "react";
 import axios from "axios";
 import "./CSS/TopCity.css";
-import { Loader } from "rsuite/cjs";
+import LoadingSpinner  from "./LoadingSpinner";
 
 
 function TopCity(props) {
@@ -39,7 +39,7 @@ function TopCity(props) {
   let iconSrc = `https://openweathermap.org/img/wn/${data1.cityIcon}.png`
   return (
     <div className="card" >
-      { isLoading ? <Loader /> : 
+      { isLoading ? <LoadingSpinner /> : 
         <div className="weather loading">
           <h2 className="city">{data1.cityName}</h2>
           <h1 className="temp">{(data1.cityTemp - 273.15).toFixed(2)}°C</h1>
