@@ -1,5 +1,5 @@
 import React from 'react'
-import './WeatherBox.css'
+import './CSS/WeatherBox.css'
 import LoadingSpinner from './LoadingSpinner'
 
 export default function WeatherBox({data, isLoading}) {

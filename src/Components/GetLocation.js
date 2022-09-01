@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import WeatherBox from "./WeatherBox";
-import './WeatherBox.css'
+import './CSS/WeatherBox.css'
 import TopCity from "./TopCity";
 
 
@@ -77,7 +77,7 @@ export default function GetLocation() {
               </path>
             </svg></button>
         </div>
-        { isLoading ? <WeatherBox data = {data} isLoading = {isLoading} /> : searchOrLoca ? <TopCity cityName={city}/> : <WeatherBox data = {data} isLoading = {isLoading}/>}
+        { isLoading ? <WeatherBox data = {data} isLoading = {isLoading} /> : searchOrLoca ? <TopCity cityName={city} fromLocation={true}/> : <WeatherBox data = {data} isLoading = {isLoading}/>}
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import GetLocation from "./GetLocation";
 
-import "./Parent.css";
+import "./CSS/Parent.css";
 import TopCity from "./TopCity";
 export default function Parent() {
   return (

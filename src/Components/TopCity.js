@@ -1,7 +1,9 @@
 import React, { useState, useEffect, memo } from "react";
 import axios from "axios";
-import "./WeatherBox.css";
+import "./CSS/TopCity.css";
 import { Loader } from "rsuite/cjs";
+
+
 function TopCity(props) {
   const APIKey = "e0c75f6e0674d3356860883d1ed7f009";
   let [data1, setData] = useState({});
@@ -35,7 +37,7 @@ function TopCity(props) {
   }, [props.cityName]);
   let iconSrc = `https://openweathermap.org/img/wn/${data1.cityIcon}.png`
   return (
-    <div className="card">
+    <div className="card" >
       { isLoading ? <Loader /> : 
         <div className="weather loading">
           <h2 className="city">{data1.cityName}</h2>
