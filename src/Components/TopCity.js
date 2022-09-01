@@ -14,12 +14,12 @@ function TopCity(props) {
         `https://api.openweathermap.org/data/2.5/weather?q=${props.cityName}&appid=${APIKey}`
       )
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         const { name } = response.data;
         const { icon, description } = response.data.weather[0];
         const { temp, humidity } = response.data.main;
         const { speed } = response.data.wind;
-        console.log(name);
+        // console.log(name);
         let newData = {
           cityName: name,
           cityIcon: icon,
@@ -32,7 +32,7 @@ function TopCity(props) {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         alert(`No Weather found for ${props.cityName}. Please search for valid city`)
       });
   }, [props.cityName]);

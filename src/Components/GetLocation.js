@@ -33,7 +33,7 @@ export default function GetLocation() {
         const { icon, description } = response.data.weather[0];
         const { temp, humidity } = response.data.main;
         const { speed } = response.data.wind;
-        console.log(name);
+        // console.log(name);
         let newData = {
           cityName: name,
           cityIcon: icon,
@@ -47,7 +47,7 @@ export default function GetLocation() {
         
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, [lat, lon]);
   function searchHandler(){
@@ -61,7 +61,7 @@ export default function GetLocation() {
       <div>
         <button
           type="button"
-          class="btn btn-outline-success btn-lg mt-2"
+          className="btn btn-outline-success btn-lg mt-2"
           onClick={findLocation}
         >
           Current location
