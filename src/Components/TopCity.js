@@ -33,6 +33,7 @@ function TopCity(props) {
       })
       .catch((err) => {
         console.log(err);
+        alert(`No Weather found for ${props.cityName}. Please search for valid city`)
       });
   }, [props.cityName]);
   let iconSrc = `https://openweathermap.org/img/wn/${data1.cityIcon}.png`
