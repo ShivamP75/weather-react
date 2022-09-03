@@ -15,7 +15,7 @@
     margin-top: 5%;
     align-items: center;
     justify-content: center;
-    color: black;
+    
   }
   
   
@@ -29,7 +29,9 @@
     font-family: inherit;
     font-size: 105%;
     width: calc(100% - 100px);
-    color: black;
+    color: white;
+    margin-right: 5%;
+    margin-left: 5%;
   }
   
   button:hover {
